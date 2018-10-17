@@ -2,7 +2,24 @@ body {
   padding: 10px;
   font-family: sans-serif;
 }
-.logoo{
-  height: 30%;
-  width: 30%;
+.ctext{
+  color: #fff;
+}
+.navcolorback{
+  background-color: #1A1919;
+}
+.yellowcol{
+  background-color: #FDCE65;
+}
+.fondclaro{
+  background-color: #EBD3A7;
+}
+.rosado{
+  background-color: #DF2C6B;
+}
+.morado{
+  background-color: #3F1432;
+}
+.violeta{
+  background-color: #160D24;
 }

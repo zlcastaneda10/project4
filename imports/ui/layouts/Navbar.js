@@ -11,9 +11,9 @@ export default class NavBar extends React.Component {
   render() {
     if (Meteor.userId()) {
       return (
-        <div className='container-fluid'>
-        <nav className="navbar navbar-expand-lg navbar-light backcolonav">
-          <Link className="navbar-brand" to="/"><img className="logo" src="/logo.png" width="340" height="70" className="d-inline-block align-top" alt="Image text"/></Link>
+        <div className='container-fluid navcolorback'>
+        <nav className="navbar navbar-expand-lg navbar-dark container">
+          <Link className="navbar-brand" to="/"><img className="logo" src="/logo.png" width="320" height="60" className="d-inline-block align-top" alt="Image text"/></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -35,9 +35,9 @@ export default class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className='container-fluid'>
-        <nav className="navbar navbar-expand-lg navbar-light backcolonav">
-          <Link className="navbar-brand" to="/"><img className="logo" src="/logo.png" width="340" height="70" className="d-inline-block align-top" alt="Image text"/></Link>
+        <div className='container-fluid navcolorback'>
+        <nav className="navbar navbar-expand-lg navbar-dark container">
+          <Link className="navbar-brand" to="/"><img className="logo" src="/logo.png" width="320" height="60" className="d-inline-block align-top" alt="Image text"/></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
