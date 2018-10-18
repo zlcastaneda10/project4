@@ -4,6 +4,7 @@ import { Accounts } from 'meteor/accounts-base';
 import { Link } from 'react-router-dom';
 
 import Navbar from './../layouts/Navbar';
+import Footer from './../layouts/Footer';
 
 class Signup extends React.Component{
 
@@ -36,8 +37,11 @@ class Signup extends React.Component{
     return (
       <div>
         <Navbar/>
+        <br/>
+        <br/>
+        <br/>
         <div className="container">
-          <div className="col-8 mx-auto">
+          <div className="col-6 mx-auto">
             <div className="card">
               <div className="card-body">
                 <h1 className="card-title">Register</h1>
@@ -63,6 +67,10 @@ class Signup extends React.Component{
             </div>
           </div>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <Footer/>
       </div>
     );
   }

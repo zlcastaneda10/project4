@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Navbar from './../layouts/Navbar';
-import Signup from './Signup';
+import Footer from './../layouts/Footer';
 
 class Login extends React.Component{
   constructor(props) {
@@ -29,8 +29,11 @@ class Login extends React.Component{
     return (
       <div>
         <Navbar/>
+        <br/>
+        <br/>
+        <br/>
         <div className="container">
-          <div className="col-8 mx-auto">
+          <div className="col-6 mx-auto">
             <div className="card">
               <div className="card-body">
                 <h1 className="card-title">Login</h1>
@@ -51,6 +54,14 @@ class Login extends React.Component{
             </div>
           </div>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <Footer/>
       </div>
     );
   }
