@@ -5,6 +5,11 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 
 class About extends React.Component{
+  componentDidMount(){
+    document.body.background = '';
+    document.body.style.backgroundRepeat = '';
+    document.body.style.backgroundSize = '';
+  }
   render(){
     return (
       <div>

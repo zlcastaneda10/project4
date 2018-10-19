@@ -5,6 +5,11 @@ import Navbar from './../layouts/Navbar';
 import Footer from './../layouts/Footer';
 
 class DoodleList extends React.Component{
+  componentDidMount(){
+    document.body.background = '';
+    document.body.style.backgroundRepeat = '';
+    document.body.style.backgroundSize = '';
+  }
   render(){
     return (
       <div>

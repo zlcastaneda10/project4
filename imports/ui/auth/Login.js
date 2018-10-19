@@ -12,6 +12,14 @@ class Login extends React.Component{
       error: ''
     };
   }
+  componentDidMount(){
+    const totalCount = 30;
+    var num = Math.ceil( Math.random() * totalCount );
+
+    document.body.background = num+'.jpg';
+    document.body.style.backgroundRepeat = "no-repeat";// Background repeat
+    document.body.style.backgroundSize = "100% 100%";
+  }
   onSubmit(e){
     e.preventDefault();
     let email = this.refs.email.value.trim();
@@ -54,6 +62,9 @@ class Login extends React.Component{
             </div>
           </div>
         </div>
+        <br/>
+        <br/>
+        <br/>
         <br/>
         <br/>
         <br/>
