@@ -35,8 +35,8 @@ export default class NavBar extends React.Component {
       );
     } else {
       return (
-        <div className='container-fluid navcolorback'>
-        <nav className="navbar navbar-expand-lg navbar-dark container">
+        <div>
+        <nav className="navbar navbar-expand-lg navbar-dark navcolorback">
           <Link className="navbar-brand" to="/"><img className="logo" src="/logo.png" width="320" height="60" className="d-inline-block align-top" alt="Image text"/></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -48,7 +48,7 @@ export default class NavBar extends React.Component {
                 <Link className="nav-link" to='/doodles'><span className='ctext'>Hitos</span></Link>
               </li>
               <li className="nav-item px-4">
-                <Link className="nav-link" to='/about'><span className='ctext'>Sobre Hitos</span></Link>
+                <Link className="nav-link" to='/about'><span className='ctext'>¿Qué es Hitos Uniandes?</span></Link>
               </li>
               <li className="nav-item px-4">
                 <Link className="nav-link" to='/register'><span className='ctext'>Signup</span></Link>
