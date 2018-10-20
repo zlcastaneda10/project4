@@ -16,7 +16,40 @@
 }
 .morado{
   background-color: #3F1432;
+  color: #fff;
 }
 .violeta{
   background-color: #160D24;
+}
+.title{
+  color: #160D24;
+}
+.subtitles{
+  color: #F7B733;
+}
+.rostext{
+  color: #DF2C6B;
+}
+button.btn {
+  background-color: #DF2C6B;
+  border-color: #DF2C6B;
+}
+button.btn:hover {
+  background-color: #F7B733;
+  border-color: #F7B733;
+}
+button.btn:focus,
+button.btn.focus {
+  box-shadow: none;
+  background-color: #F7B733;
+  border-color: #F7B733;
+}
+p {
+  text-align: justify;
+}
+.hitbox{
+  width: 17rem;
+}
+.combox{
+  width: 17rem;
 }

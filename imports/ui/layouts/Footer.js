@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 class Footer extends React.Component{
   render(){
     return (
-      <div className="fixed-bottom">
+      <div className="mt-auto">
       <footer className="page-footer navcolorback">
         <div className="footer-copyright text-center py-3">
         <span className='ctext'>

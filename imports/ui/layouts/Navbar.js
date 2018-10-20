@@ -51,10 +51,10 @@ export default class NavBar extends React.Component {
                 <Link className="nav-link" to='/about'><span className='ctext'>¿Qué es Hitos Uniandes?</span></Link>
               </li>
               <li className="nav-item px-4">
-                <Link className="nav-link" to='/register'><span className='ctext'>Signup</span></Link>
+                <Link className="nav-link" to='/login'><span className='ctext'>Ingresa</span></Link>
               </li>
               <li className="nav-item px-4">
-                <Link className="nav-link" to='/login'><span className='ctext'>Login</span></Link>
+                <Link className="nav-link" to='/register'><span className='ctext'>Registrate</span></Link>
               </li>
             </ul>
           </div>

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Navbar from './../layouts/Navbar';
 import Footer from './../layouts/Footer';
+import DoodleBox from './DoodleBox';
+import DoodleBoxComunity from './DoodleBoxComunity';
 
 class DoodleList extends React.Component{
   componentDidMount(){
@@ -14,7 +16,25 @@ class DoodleList extends React.Component{
     return (
       <div>
         <Navbar/>
-        <h1>DoodleList</h1>
+        <br/>
+        <div className="container">
+          <div className="row">
+          <div className="card-deck">
+            <DoodleBox/>
+            <DoodleBox/>
+            <DoodleBox/>
+          </div>
+          </div>
+          <br/>
+          <div className="row">
+          <div className="card-deck">
+            <DoodleBoxComunity/>
+            <DoodleBoxComunity/>
+            <DoodleBoxComunity/>
+          </div>
+          </div>
+        </div>
+        <br/>
         <Footer/>
       </div>
     );

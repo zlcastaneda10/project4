@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './../layouts/Navbar';
 import Footer from './../layouts/Footer';
 
+
 class Login extends React.Component{
   constructor(props) {
     super(props);
@@ -15,10 +16,10 @@ class Login extends React.Component{
   componentDidMount(){
     const totalCount = 30;
     var num = Math.ceil( Math.random() * totalCount );
-
     document.body.background = num+'.jpg';
-    document.body.style.backgroundRepeat = "no-repeat";// Background repeat
-    document.body.style.backgroundSize = "100% 100%";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.position = "relative";
   }
   onSubmit(e){
     e.preventDefault();
@@ -34,35 +35,34 @@ class Login extends React.Component{
   }
 
   render() {
+
     return (
       <div>
         <Navbar/>
-        <br/>
         <br/>
         <br/>
         <div className="container">
           <div className="col-6 mx-auto">
             <div className="card">
               <div className="card-body">
-                <h1 className="card-title">Login</h1>
+                <h1 className="card-title title">Ingresa</h1>
                 {this.state.error ? <div className="alert alert-danger" role="alert">{this.state.error}</div> : undefined}
                 <form onSubmit={this.onSubmit.bind(this)}>
                   <div className="form-group">
-                    <label>Email address</label>
+                    <label className="subtitles">Email address</label>
                     <input type="email" className="form-control" ref='email' name='email' aria-describedby="emailHelp" placeholder="Enter email" required/>
                   </div>
                   <div className="form-group">
-                    <label>Password</label>
+                    <label className="subtitles">Password</label>
                     <input type="password" className="form-control" ref='password' name='password' placeholder="Password" required/>
                   </div>
-                  <button type="submit" className="btn btn-primary float-right">Login</button>
+                  <button type="submit" className="btn btn-primary btn-lg float-right">Ingresa</button>
                 </form>
-                <Link to='/register'><small className='dtext'>create an account</small></Link>
+                <Link to='/register'><small className='rostext'>Crea una cuenta</small></Link>
               </div>
             </div>
           </div>
         </div>
-        <br/>
         <br/>
         <br/>
         <br/>
