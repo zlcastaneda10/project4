@@ -41,6 +41,7 @@ class Login extends React.Component{
         <Navbar/>
         <br/>
         <br/>
+        <div className='test'>
         <div className="container">
           <div className="col-6 mx-auto">
             <div className="card">
@@ -63,15 +64,8 @@ class Login extends React.Component{
             </div>
           </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        </div>
+
         <Footer/>
       </div>
     );

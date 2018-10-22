@@ -6,7 +6,6 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { Switch, Route, Router } from 'react-router';
 import { BrowserRouter } from 'react-router-dom';
-
 import createHistory from 'history/createBrowserHistory';
 
 //component imports
@@ -16,6 +15,9 @@ import NotFound from './../imports/ui/layouts/NotFound';
 import About from './../imports/ui/layouts/About';
 import DoodleList from './../imports/ui/HistoricDoodles/DoodleList';
 import DoodleForm from './../imports/ui/HistoricDoodles/DoodleForm';
+
+//server imports
+import { doodles } from './../imports/api/doodles';
 
 //import main.html
 import './main.html';

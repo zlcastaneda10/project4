@@ -28,12 +28,18 @@ class Signup extends React.Component{
     let email = this.refs.email.value.trim();
     let password = this.refs.password.value.trim();
     let username = this.refs.name.value.trim();
-    console.log(password);
 
+    if (password.length < 5) {
+      return this.setState({ error: 'Password debe tener mas de 6 caracteres' });
+    }
+    if (email===undefined || username===undefined) {
+      return this.setState({ error: 'Todos los campos son obligatorios' });
+    }
     Accounts.createUser({ username, email, password }, (err) => {
       if (err) {
         this.setState({ error: err.reason });
       } else {
+        console.log('va crear?');
         this.setState({ error: '' });
         Meteor.call('users.insert', username, email, () => {
           if (err) { console.log(err); return; }
@@ -47,6 +53,7 @@ class Signup extends React.Component{
         <Navbar/>
         <br/>
         <br/>
+        <div className='test'>
         <div className="container">
           <div className="col-6 mx-auto">
             <div className="card">
@@ -74,11 +81,8 @@ class Signup extends React.Component{
             </div>
           </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
+        </div>
+
         <Footer/>
       </div>
     );
