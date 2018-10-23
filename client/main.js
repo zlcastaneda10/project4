@@ -57,6 +57,11 @@ const routes = (
    }
  });
 
+ Tracker.autorun(()=>{
+   const doodle = doodles.find().fetch();
+   console.log('Hitos ' + doodle);
+ });
+
 Meteor.startup(() => {
   ReactDom.render(routes, document.getElementById('app'));
 });
