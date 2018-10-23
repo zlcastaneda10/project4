@@ -58,8 +58,10 @@ const routes = (
  });
 
  Tracker.autorun(()=>{
-   const doodle = doodles.find().fetch();
-   console.log('Hitos ' + doodle);
+   /* Esto ya no se puede
+    const doodle = doodles.find().fetch();
+    console.log('Hitos ' + doodle);
+   */
  });
 
 Meteor.startup(() => {
