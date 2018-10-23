@@ -17,7 +17,7 @@ class DoodleList extends React.Component{
   constructor (props){
     super(props);
     this.state = {
-      doodles: []
+      doodle: []
     };
   }
   componentDidMount(){
@@ -28,6 +28,7 @@ class DoodleList extends React.Component{
     this.doodlesTracker = Tracker.autorun(()=>{
       Meteor.subscribe('doodles');
        const doodle = doodles.find({}).fetch();
+       console.log(doodle);
        this.setState({ doodle });
     });
   }
@@ -35,8 +36,7 @@ class DoodleList extends React.Component{
     this.doodlesTracker.stop();
   }
   renderDoodlesList(){
-    console.log(this.state.doodles);
-    return this.state.doodles.map((doodle)=>{
+    return this.state.doodle.map((doodle)=>{
       return <p key={ doodle._id }>{ doodle.parrafo }</p>
     });
   }
