@@ -11,7 +11,8 @@ class DoodleForm extends React.Component{
     e.preventDefault();
     let parrafo = this.refs.parrafo.value.trim();
     if (parrafo) {
-      doodles.insert({ parrafo });
+      Meteor.call('doodles.insert', parrafo)
+      //doodles.insert({ parrafo });
       this.refs.parrafo.value = '';
     }
 

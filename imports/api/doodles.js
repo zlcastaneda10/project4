@@ -8,3 +8,16 @@ if (Meteor.isServer) {
     return doodles.find();
   });
 }
+
+Meteor.methods({
+  'doodles.insert'(parrafo) {
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    doodles.insert({
+      parrafo,
+      userId: this.userId
+    });
+  }
+});
