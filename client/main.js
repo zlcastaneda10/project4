@@ -16,9 +16,6 @@ import About from './../imports/ui/layouts/About';
 import DoodleList from './../imports/ui/HistoricDoodles/DoodleList';
 import DoodleForm from './../imports/ui/HistoricDoodles/DoodleForm';
 
-//server imports
-import { doodles } from './../imports/api/doodles';
-
 //import main.html
 import './main.html';
 
@@ -51,17 +48,10 @@ const routes = (
    console.log('isAuthenticatedPage', isAuthenticated ? isAuthenticated : isUnauthenticatedPage);
    console.log('isAuthenticated', isAuthenticated);
    if (isUnauthenticatedPage && isAuthenticated) {
-     history.push('/doodlesforms');
+     history.push('/doodles');
    } else if (isAuthenticatedPage && !isAuthenticated) {
      history.push('/');
    }
- });
-
- Tracker.autorun(()=>{
-   /* Esto ya no se puede
-    const doodle = doodles.find().fetch();
-    console.log('Hitos ' + doodle);
-   */
  });
 
 Meteor.startup(() => {

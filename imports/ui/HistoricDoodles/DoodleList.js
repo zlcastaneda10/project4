@@ -1,3 +1,6 @@
+import { Tracker } from 'meteor/tracker';
+import { Meteor } from 'meteor/meteor';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,16 +9,43 @@ import Footer from './../layouts/Footer';
 import DoodleBox from './DoodleBox';
 import DoodleBoxComunity from './DoodleBoxComunity';
 
+//server imports
+import { doodles } from './../../api/doodles';
+
+
 class DoodleList extends React.Component{
+  constructor (props){
+    super(props);
+    this.state = {
+      doodles: []
+    };
+  }
   componentDidMount(){
     document.body.background = '';
     document.body.style.backgroundRepeat = '';
     document.body.style.backgroundSize = '';
+
+    this.doodlesTracker = Tracker.autorun(()=>{
+      Meteor.subscribe('doodles');
+       const doodle = doodles.find({}).fetch();
+       this.setState({ doodle });
+    });
+  }
+  componentWillUnmount(){
+    this.doodlesTracker.stop();
+  }
+  renderDoodlesList(){
+    console.log(this.state.doodles);
+    return this.state.doodles.map((doodle)=>{
+      return <p key={ doodle._id }>{ doodle.parrafo }</p>
+    });
   }
   render(){
     return (
       <div>
         <Navbar/>
+        <br/>
+          {this.renderDoodlesList()}
         <br/>
         <div className="container">
           <div className="row">
