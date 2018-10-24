@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
+import SimpleSchema from 'simpl-schema';
 
 export const doodles = new Mongo.Collection('doodles');
 
@@ -10,9 +11,25 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'doodles.insert'(parrafo) {
+  'doodles.insert'(title, parrafo, date) {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
+    }
+
+    try {
+      new SimpleSchema({
+        title:{
+          type: String
+        },
+        parrafo: {
+          type: String
+        },
+        date: {
+          type: String
+        }
+      }).validate({ title, parrafo, date });
+    } catch (e) {
+      throw new Meteor.Error(400, e.message);
     }
 
     doodles.insert({
