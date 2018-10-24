@@ -33,7 +33,9 @@ Meteor.methods({
     }
 
     doodles.insert({
+      title,
       parrafo,
+      date,
       userId: this.userId
     });
   }

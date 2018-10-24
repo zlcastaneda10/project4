@@ -37,7 +37,9 @@ class DoodleList extends React.Component{
   }
   renderDoodlesList(){
     return this.state.doodle.map((doodle)=>{
-      return <p key={ doodle._id }>{ doodle.parrafo }</p>
+      return (
+        <p key={ doodle._id }>{ doodle.parrafo } - { doodle.title} - { doodle.date }</p>
+      )
     });
   }
   render(){
