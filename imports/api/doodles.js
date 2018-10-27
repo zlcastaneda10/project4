@@ -18,6 +18,37 @@ Meteor.methods({
 
     try {
       new SimpleSchema({
+        owner: {
+          type: String
+        },
+        title:{
+          type: String
+        },
+        parrafo: {
+          type: String
+        },
+        date: {
+          type: String
+        }
+      }).validate({ owner, title, parrafo, date });
+    } catch (e) {
+      throw new Meteor.Error(400, e.message);
+    }
+
+    doodles.insert({
+      title,
+      parrafo,
+      date,
+      userId: this.userId
+    });
+  },
+  'doodles.update'(title, parrafo, date) {
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    try {
+      new SimpleSchema({
         title:{
           type: String
         },
@@ -32,11 +63,27 @@ Meteor.methods({
       throw new Meteor.Error(400, e.message);
     }
 
-    doodles.insert({
+    doodles.update({userId: this.userId},{
       title,
       parrafo,
-      date,
-      userId: this.userId
+      date
     });
+  },
+  'doodles.remove'(doodleId) {
+    if (!this.userId) {
+      throw new Meteor.Error('not-authorized');
+    }
+
+    try {
+      new SimpleSchema({
+        doodleId:{
+          type: String
+        }
+      }).validate({ doodleId });
+    } catch (e) {
+      throw new Meteor.Error(400, e.message);
+    }
+
+    doodles.remove({_id: doodleId});
   }
 });
