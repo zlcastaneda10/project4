@@ -42,7 +42,7 @@ Meteor.methods({
       userId: this.userId
     });
   },
-  'doodles.update'(title, parrafo, date) {
+  'doodles.update'(doodleId, title, parrafo, date) {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
     }
@@ -63,7 +63,7 @@ Meteor.methods({
       throw new Meteor.Error(400, e.message);
     }
 
-    doodles.update({userId: this.userId},{
+    doodles.update({_id: doodleId, userId: this.userId},{
       title,
       parrafo,
       date

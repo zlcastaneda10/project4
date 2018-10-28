@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
+import DoodleFormEdit from './DoodleFormEdit';
 
 class DoodleBox extends React.Component {
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      editForm: false
+    }
   }
 
   parseDate(strDate) {
@@ -27,9 +32,12 @@ class DoodleBox extends React.Component {
     Meteor.call('doodles.remove', this.props.id);
   }
 
-  ediDoodle(e) {
-
+  editDoodle(e) {
+    e.preventDefault();
+    this.props.setDoodleEdit(this.props.id);
+    this.props.changeEditForm(true);
   }
+
 
   render() {
     return (
@@ -45,12 +53,13 @@ class DoodleBox extends React.Component {
             </a>
           </h6>
           <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
-          <button hidden={!this.props.edit} onClick={(e) => this.editDoodle(e)} className='btn btn-success'><a href='#'>Editar</a></button>
-          <button hidden={!this.props.edit} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'><a href='#'>Eliminar</a></button>
+          <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success'>Editar</button>
+          <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'>Eliminar</button>
         </div>
       </div>
     );
   }
 }
+
 
 export default DoodleBox;

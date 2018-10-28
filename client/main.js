@@ -16,13 +16,14 @@ import About from './../imports/ui/layouts/About';
 import DoodleList from './../imports/ui/HistoricDoodles/DoodleList';
 import DoodleListUser from './../imports/ui/HistoricDoodles/DoodleListUser';
 import DoodleForm from './../imports/ui/HistoricDoodles/DoodleForm';
+import DoodleFormEdit from '../imports/ui/HistoricDoodles/DoodleFormEdit';
 
 //import main.html
 import './main.html';
 
 const history = createHistory();
 const unauthenticatedPages = ['/', '/doodles', '/about', '/login', '/register'];
-const authenticatedPages = ['/doodlesforms'];
+const authenticatedPages = ['/doodlesforms','/doodlesformsedit'];
 let isUnauthenticatedPage = true;
 let isAuthenticatedPage = false;
 
@@ -33,6 +34,7 @@ const routes = (
        <Route exact path="/doodles" component={DoodleList} />
        <Route exact path="/mydoodles" component={DoodleListUser} />
        <Route exact path="/doodlesforms" component={DoodleForm} />
+       <Route exact path="/doodlesformsedit" component={DoodleFormEdit} />
        <Route exact path="/about" component={About} />
        <Route exact path="/register" component={Signup} />
        <Route exact path="/login" component={Login} />
