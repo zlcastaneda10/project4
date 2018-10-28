@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Meteor } from 'meteor/meteor';
 
 class DoodleBox extends React.Component {
 
@@ -20,11 +21,14 @@ class DoodleBox extends React.Component {
     return months[month - 1];
   }
 
-  renderEdit() {
-    return (<div>
-      <button className='btn btn-success'><a href='#'>Editar</a></button>
-      <button className='btn btn-danger'><a href='#'>Eliminar</a></button>
-    </div>);
+  removeDoodle(e) {
+    e.preventDefault();
+    console.log(this.props.id);
+    Meteor.call('doodles.remove', this.props.id);
+  }
+
+  ediDoodle(e) {
+
   }
 
   render() {
@@ -41,8 +45,8 @@ class DoodleBox extends React.Component {
             </a>
           </h6>
           <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
-          <button hidden={!this.props.edit} className='btn btn-success'><a href='#'>Editar</a></button>
-          <button hidden={!this.props.edit} className='btn btn-danger'><a href='#'>Eliminar</a></button>
+          <button hidden={!this.props.edit} onClick={(e) => this.editDoodle(e)} className='btn btn-success'><a href='#'>Editar</a></button>
+          <button hidden={!this.props.edit} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'><a href='#'>Eliminar</a></button>
         </div>
       </div>
     );
