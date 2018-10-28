@@ -30,7 +30,7 @@ Meteor.methods({
         date: {
           type: String
         }
-      }).validate({ owner, title, parrafo, date });
+      }).validate({ owner: this.userId, title, parrafo, date });
     } catch (e) {
       throw new Meteor.Error(400, e.message);
     }

@@ -13,61 +13,57 @@ import DoodleBoxComunity from './DoodleBoxComunity';
 import { doodles } from './../../api/doodles';
 
 
-class DoodleList extends React.Component{
-  constructor (props){
+class DoodleList extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       doodle: []
     };
   }
-  componentDidMount(){
+  componentDidMount() {
     document.body.background = '';
     document.body.style.backgroundRepeat = '';
     document.body.style.backgroundSize = '';
 
-    this.doodlesTracker = Tracker.autorun(()=>{
+    this.doodlesTracker = Tracker.autorun(() => {
       Meteor.subscribe('doodles');
-       const doodle = doodles.find({}).fetch();
-       console.log(doodle);
-       this.setState({ doodle });
+      const doodle = doodles.find({}).fetch();
+      console.log(doodle);
+      this.setState({ doodle });
     });
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     this.doodlesTracker.stop();
   }
-  renderDoodlesList(){
-    return this.state.doodle.map((doodle)=>{
-      return (
-        <p key={ doodle._id }>{ doodle.parrafo } - { doodle.title} - { doodle.date }</p>
-      )
+  renderDoodlesList() {
+    //<p key={ doodle._id }>{ doodle.parrafo } - { doodle.title} - { doodle.date }</p>
+    return this.state.doodle.map((doodle) => { 
+      return <DoodleBox key={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={'uniandes'}/> 
     });
   }
-  render(){
+  render() {
     return (
       <div>
-        <Navbar/>
-        <br/>
-          {this.renderDoodlesList()}
-        <br/>
+        <Navbar />
+        <br />
+        <br />
         <div className="container">
           <div className="row">
-          <div className="card-deck">
-            <DoodleBox/>
-            <DoodleBox/>
-            <DoodleBox/>
+            <div className="card-deck">
+              {this.renderDoodlesList()}
+            </div>
           </div>
-          </div>
-          <br/>
+          <br />
           <div className="row">
-          <div className="card-deck">
-            <DoodleBoxComunity/>
-            <DoodleBoxComunity/>
-            <DoodleBoxComunity/>
-          </div>
+            <div className="card-deck">
+              <DoodleBoxComunity />
+              <DoodleBoxComunity />
+              <DoodleBoxComunity />
+            </div>
           </div>
         </div>
-        <br/>
-        <Footer/>
+        <br />
+        <Footer />
       </div>
     );
   }

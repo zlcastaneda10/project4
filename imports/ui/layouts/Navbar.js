@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 export default class NavBar extends React.Component {
   onLogout(){
-    Accounts.logout();
+    Accounts.logout(() => {
+      this.setState({});
+    });
   }
 
   render() {
@@ -26,7 +28,7 @@ export default class NavBar extends React.Component {
                 <Link className="nav-link" to='/doodlesforms'><span className='ctext'>Crear Hito</span></Link>
               </li>
               <li className="nav-item px-4">
-                <span className="nav-link" onClick={this.onLogout.bind(this)}><span className='ctext'>Logout</span></span>
+                <Link className="nav-link" to='/' onClick={this.onLogout.bind(this)}><span className='ctext'>Logout</span></Link>
               </li>
             </ul>
           </div>
