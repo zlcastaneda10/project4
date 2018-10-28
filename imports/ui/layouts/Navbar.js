@@ -25,6 +25,9 @@ export default class NavBar extends React.Component {
                 <Link className="nav-link" to='/doodles'><span className='ctext'>Hitos</span></Link>
               </li>
               <li className="nav-item px-4">
+                <Link className="nav-link" to='/mydoodles'><span className='ctext'>Mis Hitos</span></Link>
+              </li>
+              <li className="nav-item px-4">
                 <Link className="nav-link" to='/doodlesforms'><span className='ctext'>Crear Hito</span></Link>
               </li>
               <li className="nav-item px-4">

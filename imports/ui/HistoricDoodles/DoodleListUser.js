@@ -13,12 +13,12 @@ import DoodleBoxComunity from './DoodleBoxComunity';
 import { doodles } from './../../api/doodles';
 
 
-class DoodleList extends React.Component {
+class DoodleListUser extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       doodle: [],
-      edit: false
+      edit: true
     };
   }
   componentDidMount() {
@@ -28,7 +28,7 @@ class DoodleList extends React.Component {
 
     this.doodlesTracker = Tracker.autorun(() => {
       Meteor.subscribe('doodles');
-      const doodle = doodles.find({}).fetch();
+      const doodle = doodles.find({userId: Meteor.userId}).fetch();
       console.log(doodle);
       this.setState({ doodle });
     });
@@ -39,7 +39,7 @@ class DoodleList extends React.Component {
   renderDoodlesList() {
     //<p key={ doodle._id }>{ doodle.parrafo } - { doodle.title} - { doodle.date }</p>
     return this.state.doodle.map((doodle) => { 
-      return <DoodleBox key={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={'uniandes'} edit={false}/> 
+      return <DoodleBox key={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={'uniandes'} edit={true}/> 
     });
   }
   render() {
@@ -55,13 +55,6 @@ class DoodleList extends React.Component {
             </div>
           </div>
           <br />
-          <div className="row">
-            <div className="card-deck">
-              <DoodleBoxComunity />
-              <DoodleBoxComunity />
-              <DoodleBoxComunity />
-            </div>
-          </div>
         </div>
         <br />
         <Footer />
@@ -70,4 +63,4 @@ class DoodleList extends React.Component {
   }
 }
 
-export default DoodleList;
+export default DoodleListUser;
