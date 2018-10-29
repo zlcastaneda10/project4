@@ -40,10 +40,11 @@ class DoodleBox extends React.Component {
 
 
   render() {
+    console.log(this.props);
     if (this.props.type === 'Uniandes') {
       return (
         <div className="card hitbox">
-          <Link to='/'><img className="card-img-top" src="http://placehold.it/400x300" alt="Card image cap" /></Link>
+          <Link to={{pathname: '/doodle',state: { value: this.props }}}><img className="card-img-top" src="http://placehold.it/400x300" alt="Card image cap" /></Link>
           <div className="card-body">
             <h6 className="card-subtitle mb-2 text-muted">
               <small className="rostext">
@@ -53,7 +54,7 @@ class DoodleBox extends React.Component {
                 {this.props.type}
               </a>
             </h6>
-            <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
+            <Link to={{pathname: '/doodle',state: { value: this.props }}}><h5 className="card-title title">{this.props.title}</h5></Link>
             <div className='float-right'>
             <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success btn-sm coll'>Editar</button>
             {' '}
@@ -65,7 +66,7 @@ class DoodleBox extends React.Component {
     }else {
       return (
         <div className="card hitbox">
-          <Link to='/'><img className="card-img-top" src="http://placehold.it/400x300" alt="Card image cap" /></Link>
+          <Link to={{pathname: '/doodle',state: { value: this.props }}}><img className="card-img-top" src="http://placehold.it/400x300" alt="Card image cap" /></Link>
           <div className="card-body">
             <h6 className="card-subtitle mb-2 text-muted">
               <small className="rostext">
@@ -75,7 +76,7 @@ class DoodleBox extends React.Component {
                 {this.props.type}
               </a>
             </h6>
-            <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
+            <Link to={{pathname: '/doodle',state: { value: this.props }}}><h5 className="card-title title">{this.props.title}</h5></Link>
             <div className='float-right'>
             <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success btn-sm coll'>Editar</button>
             {' '}
