@@ -15,7 +15,7 @@ class Signup extends React.Component{
     };
   }
   componentDidMount(){
-    const totalCount = 30;
+    const totalCount = 10;
     var num = Math.ceil( Math.random() * totalCount );
     document.body.background = num+'.jpg';
     document.body.style.backgroundRepeat = "no-repeat";
