@@ -15,7 +15,7 @@ class About extends React.Component{
       <div>
       <Navbar/>
       <br/>
-      <div className="container">
+      <div className="container testh">
       <div className="container">
             <h3 className="card-title title">
               ¡Toda la informacion sobre hitos Uniandes la encontraras aquí!

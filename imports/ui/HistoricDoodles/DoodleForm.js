@@ -41,7 +41,7 @@ class DoodleForm extends React.Component {
         <Navbar />
         <br />
         <br />
-        <div className="container">
+        <div className="container testh">
           {this.state.success ? <div className="alert alert-success" role="alert">{this.state.success}</div> : undefined}
           <form onSubmit={this.onSubmit.bind(this)}>
             <div className="row">

@@ -71,7 +71,7 @@ class DoodleListUser extends React.Component {
                     <Navbar />
                     <br />
                     <br />
-                    <div className="container">
+                    <div className="container testh">
                         <div className="row">
                             <div className="card-deck">
                                 {this.renderDoodlesList()}

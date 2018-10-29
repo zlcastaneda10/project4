@@ -29,8 +29,8 @@ class Signup extends React.Component{
     let password = this.refs.password.value.trim();
     let username = this.refs.name.value.trim();
 
-    if (password.length < 5) {
-      return this.setState({ error: 'Password debe tener mas de 6 caracteres' });
+    if (password.length <= 5) {
+      return this.setState({ error: 'Password debe tener al menos 6 caracteres' });
     }
     if (email===undefined || username===undefined) {
       return this.setState({ error: 'Todos los campos son obligatorios' });
