@@ -17,6 +17,7 @@ import DoodleList from './../imports/ui/HistoricDoodles/DoodleList';
 import DoodleListUser from './../imports/ui/HistoricDoodles/DoodleListUser';
 import DoodleForm from './../imports/ui/HistoricDoodles/DoodleForm';
 import DoodleFormEdit from '../imports/ui/HistoricDoodles/DoodleFormEdit';
+import Doodle from '../imports/ui/HistoricDoodles/Doodle';
 
 //import main.html
 import './main.html';
@@ -32,6 +33,7 @@ const routes = (
      <Switch>
        <Route exact path="/" component={DoodleList} />
        <Route exact path="/doodles" component={DoodleList} />
+       <Route exact path="/doodle" component={Doodle} />
        <Route exact path="/mydoodles" component={DoodleListUser} />
        <Route exact path="/doodlesforms" component={DoodleForm} />
        <Route exact path="/doodlesformsedit" component={DoodleFormEdit} />

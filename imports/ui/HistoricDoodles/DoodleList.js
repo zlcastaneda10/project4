@@ -56,17 +56,17 @@ class DoodleList extends React.Component {
         <br />
         <br />
         <div className="container">
-        <div className="jumbotron jumbotron-fluid">
-          <div className="container">
+        <div className="jumbotron">
             <h1 className="display-4">Hitos Uniandes</h1>
             <p className="lead">
             Hitos Uniandes es un espacio creado
             por la Oficina de Construcción de Comunidad
             para visibilizar la investigación sobre algunos
-            hitos históricos de nuestra institucion.
+            hitos históricos de nuestra institucion y comunidad.
+            Los invitamos a ser parte de esta iniciativa.
             </p>
-          </div>
         </div>
+        <div className="container">
           <div className="row">
             <div className="card-deck">
               {this.renderDoodlesListUniandes()}
@@ -77,6 +77,7 @@ class DoodleList extends React.Component {
             <div className="card-deck">
             {this.renderDoodlesListComunidad()}
             </div>
+          </div>
           </div>
         </div>
         <br />

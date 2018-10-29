@@ -16,61 +16,43 @@ class About extends React.Component{
       <Navbar/>
       <br/>
       <div className="container">
+      <div className="container">
             <h3 className="card-title title">
-              Lorem ipsum dolor sit amet consectetur
-              adipiscing elit potenti et senectus per
-              sollicitudin, viverra porttitor nibh
-              dictumst lacus cras non curabitur mi
-              volutpat ligula.
+              ¡Toda la informacion sobre hitos Uniandes la encontraras aquí!
             </h3>
             <br/>
-            <h5 className="rostext">¿Facilisi molestie curae consequat, cursus pretium?</h5>
+            <h5 className="rostext">¿Qué es hitos Uniandes?</h5>
             <p className="card-text">
-              Himenaeos dapibus vestibulum pellentesque id libero
-              ultrices nostra nisl mauris, dis cum nulla ac
-              condimentum primis arcu phasellus, montes suspendisse
-              quam auctor aenean cursus facilisis urna.
-              Sollicitudin vestibulum eu habitant dictum interdum
-              nec senectus ornare cum quam himenaeos scelerisque,
-              pellentesque tristique curae viverra consequat ad
-              taciti velit nostra faucibus magnis natoque, eget
-              aliquam mauris integer etiam habitasse fermentum
-              magna conubia suscipit morbi. Est nibh quisque sapien
-              pellentesque quam parturient fermentum, rhoncus libero
-              maecenas hac arcu hendrerit, a ut consequat netus
-              vivamus litora.
-            </p>
-            <br/>
-            <h5 className="rostext">¿Facilisi molestie curae consequat, cursus pretium?</h5>
-            <p className="card-text">
-              Himenaeos dapibus vestibulum pellentesque id libero
-              ultrices nostra nisl mauris, dis cum nulla ac
-              condimentum primis arcu phasellus, montes suspendisse
-              quam auctor aenean cursus facilisis urna.
-              Sollicitudin vestibulum eu habitant dictum interdum
-              nec senectus ornare cum quam himenaeos scelerisque,
-              pellentesque tristique curae viverra consequat ad
-              taciti velit nostra faucibus magnis natoque, eget
-              aliquam mauris integer etiam habitasse fermentum
-              magna conubia suscipit morbi. Est nibh quisque sapien
-              pellentesque quam parturient fermentum, rhoncus libero
-              maecenas hac arcu hendrerit, a ut consequat netus
-              vivamus litora.
-            </p>
-            <h5 className="rostext">¿Facilisi molestie curae consequat, cursus pretium?</h5>
-            <p className="card-text">
-              Himenaeos dapibus vestibulum pellentesque id libero
-              ultrices nostra nisl mauris, dis cum nulla ac
-              condimentum primis arcu phasellus, montes suspendisse
-              quam auctor aenean cursus facilisis urna.
-              Sollicitudin vestibulum eu habitant dictum interdum
-              nec senectus ornare cum quam himenaeos scelerisque,
-              pellentesque tristique curae viverra consequat ad
-              taciti velit nostra faucibus magnis natoque, eget
-              aliquam mauris integer etiam.
+              Hitos Uniandes es un espacio creado por la Oficina
+              de Construcción de Comunidad y   (créditos estudiantes)
+              para visibilizar la investigación sobre algunos
+              hitos históricos de Uniandes, en los que se ha
+              identificado la presencia de distintos miembros
+              de la comunidad uniandina y cuyos resultados han
+              impactado de manera positiva al país.
+              <br/>
+              <br/>
+              Esta plataforma permite consultar diferentes momentos
+              históricos para la Universidad y aportar en la
+              construcción de nuevos hitos a partir de los recuerdos,
+              las experiencias y la memoria colectiva de los
+              miembros de la comunidad uniandina.
             </p>
           </div>
-      <br/>
+          </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
       <Footer/>
       </div>
     );
