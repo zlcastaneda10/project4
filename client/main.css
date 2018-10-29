@@ -64,3 +64,6 @@ p {
 .test{
   height: 540px;
 }
+.textareatest{
+  white-space: pre-wrap;
+}

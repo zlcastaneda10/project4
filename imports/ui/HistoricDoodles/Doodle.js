@@ -18,7 +18,8 @@ class Doodle extends React.Component{
     return months[month - 1];
   }
   render(){
-
+    var textarea = this.props.location.state.value.parrafo.replace(/\r\n/g, "<br>");
+    console.log(textarea);
     return (
       <div>
       <Navbar/>
@@ -27,7 +28,7 @@ class Doodle extends React.Component{
         {this.props.location.state.value.title}
         </h1>
         <h5 className="rostext"><small>{this.parseDate(this.props.location.state.value.date)}</small></h5>
-        <p className="card-text">
+        <p className="textareatest">
         {this.props.location.state.value.parrafo}
         </p>
         </div>
