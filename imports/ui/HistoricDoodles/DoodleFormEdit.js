@@ -25,7 +25,7 @@ class DoodleFormEdit extends React.Component {
       console.log('entro con ' + parrafo + title + date);
       Meteor.call('doodles.update', this.props.id, title, parrafo, date, (err, res) => {
         if (err) {
-          this.setState({ success: 'Hubo un error. No se pudo editar el hito. :(' });
+          this.setState({ success: 'Hubo un error. No se pudo editar el hito :(' });
         }
         else {
           this.setState({ success: 'Ha editado correctamente un hito. Felicitaciones!' });
@@ -75,8 +75,11 @@ class DoodleFormEdit extends React.Component {
               <label className="subtitles">Contenido</label>
               <textarea className="form-control" rows="5" ref="parrafo" defaultValue={this.props.parrafo}></textarea>
             </div>
-            <button onClick={(e) => this.cancelEdit(e)} className="btn btn-primary btn-lg float-right">Cancelar</button>
-            <button type="submit" className="btn btn-primary btn-lg float-right">Editar</button>
+            <div className="float-right">
+            <button type="submit" className="btn btn-primary btn-lg coll">Editar</button>
+            {' '}
+            <button onClick={(e) => this.cancelEdit(e)} className="btn btn-primary btn-lg coll">Cancelar</button>
+            </div>
           </form>
         </div>
         <br />

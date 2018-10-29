@@ -54,8 +54,11 @@ class DoodleBox extends React.Component {
               </a>
             </h6>
             <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
-            <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success'>Editar</button>
-            <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'>Eliminar</button>
+            <div className='float-right'>
+            <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success btn-sm coll'>Editar</button>
+            {' '}
+            <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger btn-sm coll'>Eliminar</button>
+            </div>
           </div>
         </div>
       );
@@ -73,8 +76,11 @@ class DoodleBox extends React.Component {
               </a>
             </h6>
             <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
-            <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success'>Editar</button>
-            <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'>Eliminar</button>
+            <div className='float-right'>
+            <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success btn-sm coll'>Editar</button>
+            {' '}
+            <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger btn-sm coll'>Eliminar</button>
+            </div>
           </div>
         </div>
       );

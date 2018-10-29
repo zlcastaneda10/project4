@@ -57,7 +57,7 @@ class Login extends React.Component{
                     <label className="subtitles">Password</label>
                     <input type="password" className="form-control" ref='password' name='password' placeholder="Password" required/>
                   </div>
-                  <button type="submit" className="btn btn-primary btn-lg float-right">Ingresa</button>
+                  <button type="submit" className="btn btn-primary btn-lg float-right coll">Ingresa</button>
                 </form>
                 <Link to='/register'><small className='rostext'>Crea una cuenta</small></Link>
               </div>

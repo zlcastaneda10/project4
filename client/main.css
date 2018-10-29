@@ -18,6 +18,11 @@
   background-color: #3F1432;
   color: #fff;
 }
+.morado:hover {
+  background-color: #3F1432;
+  color: #fff;
+  text-decoration: none;
+}
 .violeta{
   background-color: #160D24;
 }
@@ -30,16 +35,16 @@
 .rostext{
   color: #DF2C6B;
 }
-button.btn {
+button.btn.coll {
   background-color: #DF2C6B;
   border-color: #DF2C6B;
 }
-button.btn:hover {
+button.btn.coll:hover {
   background-color: #F7B733;
   border-color: #F7B733;
 }
-button.btn:focus,
-button.btn.focus {
+button.btn.coll:focus,
+button.btn.coll.focus {
   box-shadow: none;
   background-color: #F7B733;
   border-color: #F7B733;

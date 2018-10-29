@@ -70,7 +70,7 @@ class DoodleForm extends React.Component {
               <label className="subtitles">Contenido</label>
               <textarea className="form-control" rows="5" ref="parrafo"></textarea>
             </div>
-            <button type="submit" className="btn btn-primary btn-lg float-right">Crear</button>
+            <button type="submit" className="btn btn-primary btn-lg float-right coll">Crear</button>
           </form>
         </div>
         <br />
