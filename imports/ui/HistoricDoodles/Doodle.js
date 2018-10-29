@@ -9,7 +9,9 @@ class Doodle extends React.Component{
     return (
       <div>
       <Navbar/>
-
+        <div className="container">
+          
+        </div>
       <Footer/>
       </div>
     );
