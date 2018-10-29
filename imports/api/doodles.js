@@ -65,7 +65,7 @@ Meteor.methods({
         tipo: {
           type: String
         }
-      }).validate({ title, parrafo, date });
+      }).validate({ title, parrafo, date, tipo });
     } catch (e) {
       throw new Meteor.Error(400, e.message);
     }
