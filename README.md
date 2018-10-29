@@ -18,10 +18,10 @@
 * Clonar el proyecto y en la carpeta de este correr `meteor npm install` y luego `meteor`
 
 ## LICENCIA
-[MIT]
+[MIT](https://github.com/jpgonzalez14/project4/blob/master/LICENSE)
 
 ## SCREENSHOT
-
+![Screenshot](https://jpgonzalez14.github.io/p4.png)
 
 ## AUTORES
 [Juan Pablo Gonzalez Peña](https://github.com/jpgonzalez14)
