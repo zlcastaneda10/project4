@@ -46,6 +46,24 @@ class DoodleFormEdit extends React.Component {
     this.props.changeEditForm(false);
     this.props.setDoodleEdit(null);
   }
+  renderOptions() {
+    if (this.props.type === 'Uniandes') {
+      return (
+        <select className="custom-select my-1 mr-sm-2" ref="tipo" >
+          <option value="Uniandes" selected >Uniandes</option>
+          <option value="Comunidad" >Comunidad</option>
+        </select>
+      )
+    } else {
+      return (
+        <select className="custom-select my-1 mr-sm-2" ref="tipo" >
+          <option value="Uniandes" selected >Uniandes</option>
+          <option value="Comunidad" selected >Comunidad</option>
+        </select>
+      )
+    }
+  }
+
   render() {
     return (
       <div>
@@ -73,10 +91,9 @@ class DoodleFormEdit extends React.Component {
             </div>
             <div className="form-group">
               <label className="subtitles">Tipo</label>
-              <select className="custom-select my-1 mr-sm-2" ref="tipo">
-                <option defaultValue={this.props.tipo}>{this.props.tipo}</option>
-                <option value="Uniandes">Uniandes</option>
-                <option value="Comunidad">Comunidad</option>
+              <select className="custom-select my-1 mr-sm-2" ref="tipo" defaultValue={this.props.type}>
+                <option value="Uniandes" >Uniandes</option>
+                <option value="Comunidad" >Comunidad</option>
               </select>
             </div>
             <div className="form-group">
@@ -84,9 +101,9 @@ class DoodleFormEdit extends React.Component {
               <textarea className="form-control" rows="5" ref="parrafo" defaultValue={this.props.parrafo}></textarea>
             </div>
             <div className="float-right">
-            <button type="submit" className="btn btn-primary btn-lg coll">Editar</button>
-            {' '}
-            <button onClick={(e) => this.cancelEdit(e)} className="btn btn-primary btn-lg coll">Cancelar</button>
+              <button type="submit" className="btn btn-primary btn-lg coll">Editar</button>
+              {' '}
+              <button onClick={(e) => this.cancelEdit(e)} className="btn btn-primary btn-lg coll">Cancelar</button>
             </div>
           </form>
         </div>
