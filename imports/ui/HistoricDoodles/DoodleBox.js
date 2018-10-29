@@ -40,24 +40,45 @@ class DoodleBox extends React.Component {
 
 
   render() {
-    return (
-      <div className="card hitbox">
-        <Link to='/'><img className="card-img-top" src="http://placehold.it/400x300" alt="Card image cap" /></Link>
-        <div className="card-body">
-          <h6 className="card-subtitle mb-2 text-muted">
-            <small className="rostext">
-              {this.parseDate(this.props.date)}
-            </small>
-            <a href="#" className="badge badge-warning float-right">
-              {this.props.type}
-            </a>
-          </h6>
-          <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
-          <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success'>Editar</button>
-          <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'>Eliminar</button>
+    if (this.props.type === 'Uniandes') {
+      return (
+        <div className="card hitbox">
+          <Link to='/'><img className="card-img-top" src="http://placehold.it/400x300" alt="Card image cap" /></Link>
+          <div className="card-body">
+            <h6 className="card-subtitle mb-2 text-muted">
+              <small className="rostext">
+                {this.parseDate(this.props.date)}
+              </small>
+              <a href="#" className="badge badge-warning float-right">
+                {this.props.type}
+              </a>
+            </h6>
+            <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
+            <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success'>Editar</button>
+            <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'>Eliminar</button>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }else {
+      return (
+        <div className="card hitbox">
+          <Link to='/'><img className="card-img-top" src="http://placehold.it/400x300" alt="Card image cap" /></Link>
+          <div className="card-body">
+            <h6 className="card-subtitle mb-2 text-muted">
+              <small className="rostext">
+                {this.parseDate(this.props.date)}
+              </small>
+              <a href="#" className="badge morado float-right">
+                {this.props.type}
+              </a>
+            </h6>
+            <Link to='/'><h5 className="card-title title">{this.props.title}</h5></Link>
+            <button hidden={!this.props.editable} onClick={(e) => this.editDoodle(e)} className='btn btn-success'>Editar</button>
+            <button hidden={!this.props.editable} onClick={(e) => this.removeDoodle(e)} className='btn btn-danger'>Eliminar</button>
+          </div>
+        </div>
+      );
+    }
   }
 }
 

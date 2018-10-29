@@ -43,7 +43,7 @@ class DoodleListUser extends React.Component {
         //<p key={ doodle._id }>{ doodle.parrafo } - { doodle.title} - { doodle.date }</p>
         return this.state.doodle.map((doodle) => {
             return (
-                <DoodleBox key={doodle._id} id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={'uniandes'}
+                <DoodleBox key={doodle._id} id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={doodle.tipo}
                     editable={this.state.editable} changeEditForm={(editForm) => this.changeEditForm(editForm)}  setDoodleEdit={(id)=>this.setDoodleEdit(id)}/>
             )
         });
@@ -58,7 +58,7 @@ class DoodleListUser extends React.Component {
     }
     renderDoodleFormEdit() {
         const doodle = doodles.findOne({ _id: this.state.doodleEdit});
-        return (<DoodleFormEdit id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} 
+        return (<DoodleFormEdit id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date}
             changeEditForm={(editForm) => this.changeEditForm(editForm)} setDoodleEdit={(id)=>this.setDoodleEdit(id)}/>)
     }
 

@@ -20,8 +20,9 @@ class DoodleForm extends React.Component {
     let parrafo = this.refs.parrafo.value.trim();
     let title = this.refs.title.value.trim();
     let date = this.refs.date.value.trim();
+    let tipo = this.refs.tipo.value.trim();
     if (parrafo && title && date) {
-      Meteor.call('doodles.insert', title, parrafo, date, (err, res) => {
+      Meteor.call('doodles.insert', title, parrafo, date, tipo, (err, res) => {
         if (err)
           this.setState({ success: 'Hubo un error. No se pudo crear el hito. :(' });
         else
@@ -30,6 +31,7 @@ class DoodleForm extends React.Component {
       this.refs.parrafo.value = '';
       this.refs.title.value = '';
       this.refs.date.value = '';
+      this.refs.tipo.value = '';
     }
 
   }
@@ -56,6 +58,13 @@ class DoodleForm extends React.Component {
                   ref='date'
                 />
               </div>
+            </div>
+            <div className="form-group">
+              <label className="subtitles">Tipo</label>
+              <select className="custom-select my-1 mr-sm-2" ref="tipo">
+                <option value="Uniandes">Uniandes</option>
+                <option value="Comunidad">Comunidad</option>
+              </select>
             </div>
             <div className="form-group">
               <label className="subtitles">Contenido</label>
