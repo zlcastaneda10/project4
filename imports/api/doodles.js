@@ -66,7 +66,8 @@ Meteor.methods({
     doodles.update({_id: doodleId, userId: this.userId},{
       title,
       parrafo,
-      date
+      date,
+      userId: this.userId
     });
   },
   'doodles.remove'(doodleId) {

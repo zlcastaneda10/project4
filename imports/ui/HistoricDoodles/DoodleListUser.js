@@ -58,7 +58,8 @@ class DoodleListUser extends React.Component {
     }
     renderDoodleFormEdit() {
         const doodle = doodles.findOne({ _id: this.state.doodleEdit});
-        return (<DoodleFormEdit id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} changeEditForm={(editForm) => this.changeEditForm(editForm)} />)
+        return (<DoodleFormEdit id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} 
+            changeEditForm={(editForm) => this.changeEditForm(editForm)} setDoodleEdit={(id)=>this.setDoodleEdit(id)}/>)
     }
 
     render() {
