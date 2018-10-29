@@ -2,6 +2,8 @@
 
 ## OBJETIVOS
 
+Crear una aplicación web que implemente requisitos no funcionales, como diseño, seguridad, accesibilidad y pruebas.
+Crear un espacio que permita compartir eventos históricos de nuestra universidad y comunidad.
 
 ## TECNOLOGIAS USADAS
 
