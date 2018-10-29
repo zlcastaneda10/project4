@@ -8,7 +8,6 @@ import Navbar from './../layouts/Navbar';
 import Footer from './../layouts/Footer';
 import DoodleBox from './DoodleBox';
 import DoodleFormEdit from './DoodleFormEdit';
-import DoodleBoxComunity from './DoodleBoxComunity';
 
 //server imports
 import { doodles } from './../../api/doodles';

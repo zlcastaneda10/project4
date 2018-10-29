@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom';
 import Navbar from './../layouts/Navbar';
 import Footer from './../layouts/Footer';
 import DoodleBox from './DoodleBox';
-import DoodleBoxComunity from './DoodleBoxComunity';
 
 //server imports
 import { doodles } from './../../api/doodles';
@@ -36,10 +35,18 @@ class DoodleList extends React.Component {
   componentWillUnmount() {
     this.doodlesTracker.stop();
   }
-  renderDoodlesList() {
-    //<p key={ doodle._id }>{ doodle.parrafo } - { doodle.title} - { doodle.date }</p>
+  renderDoodlesListUniandes() {
     return this.state.doodle.map((doodle) => {
-      return <DoodleBox key={doodle._id} id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={doodle.tipo} edit={false}/>
+      if (doodle.tipo === 'Uniandes') {
+        return <DoodleBox key={doodle._id} id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={doodle.tipo} edit={false}/>
+      }
+    });
+  }
+  renderDoodlesListComunidad() {
+    return this.state.doodle.map((doodle) => {
+      if (doodle.tipo === 'Comunidad') {
+        return <DoodleBox key={doodle._id} id={doodle._id} parrafo={doodle.parrafo} title={doodle.title} date={doodle.date} type={doodle.tipo} edit={false}/>
+      }
     });
   }
   render() {
@@ -51,15 +58,13 @@ class DoodleList extends React.Component {
         <div className="container">
           <div className="row">
             <div className="card-deck">
-              {this.renderDoodlesList()}
+              {this.renderDoodlesListUniandes()}
             </div>
           </div>
           <br />
           <div className="row">
             <div className="card-deck">
-              <DoodleBoxComunity />
-              <DoodleBoxComunity />
-              <DoodleBoxComunity />
+            {this.renderDoodlesListComunidad()}
             </div>
           </div>
         </div>
