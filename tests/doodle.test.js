@@ -38,7 +38,7 @@ if (Meteor.isServer) {
                 assert.equal(doodles.find().count(), 0);
             });
 
-            it('can update doodle', () => {
+            it('can update owned doodle', () => {
                 // Find the internal implementation of the task method so we can
                 // test it in isolation
                 const updateDoodle = Meteor.server.method_handlers['doodles.update'];
