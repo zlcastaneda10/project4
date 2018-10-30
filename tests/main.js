@@ -1,4 +1,5 @@
 import assert from "assert";
+import './doodle.test';
 
 describe("project4", function () {
   it("package.json has correct name", async function () {
