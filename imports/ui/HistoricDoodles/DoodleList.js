@@ -35,6 +35,7 @@ class DoodleList extends React.Component {
   componentWillUnmount() {
     this.doodlesTracker.stop();
   }
+  // Zulma Castañeda: No olviden implementar algun mecanismo de paginacion para sus Doodles, si quieren hacerlo con meteor https://github.com/alethes/meteor-pages aunque con react tambien hay muchas opciones
   renderDoodlesListUniandes() {
     return this.state.doodle.map((doodle) => {
       if (doodle.tipo === 'Uniandes') {
